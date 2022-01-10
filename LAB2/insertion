@@ -1,0 +1,30 @@
+#include <bits/stdc++.h> 
+using namespace std; 
+class Node { 
+public: 
+    int key; 
+    // Array   
+    Node **f; 
+    Node(int, int); 
+}; 
+  
+Node::Node(int key, int level) { 
+    this->key = key; 
+    f = new Node*[level+1]; 
+    // Fill with NULL 
+    memset(f, 0, sizeof(Node*)*(level+1)); 
+}; 
+
+class SkipList { 
+    int MAXLVL; 
+    float P; 
+    int level; 
+    Node *header; 
+public: 
+    SkipList(int, float); 
+    int randomLevel(); 
+    Node* createNode(int, int); 
+    void insertElement(int); 
+    void displayList(); 
+}; 
+  
